@@ -7,9 +7,7 @@ import math
 
 cities = [["Vancouver", 3],["Cupertino", 3],["Irvine", 3],["Mountain View", 3] ,["River View", 3], ["Chicago",6]
     ,["Somerville", 3]
-    ,["Grand Central", 3]
-    ,["Midtown", 3]
-    ,["Union Square", 3]
+    ,["Manhattan", 9]
     ,["Providence", 3]
     ,["El Paso", 3]
     ,["Houston",6]
@@ -46,8 +44,10 @@ mcities = [["Phoenix, AZ", 3]
 
 scale = 5
 
-map = Basemap(llcrnrlon=-119,llcrnrlat=22,urcrnrlon=-64,urcrnrlat=49,
-        projection='lcc',lat_1=32,lat_2=45,lon_0=-95)
+map = Basemap(resolution="c",llcrnrlon=-130.1,llcrnrlat=23,urcrnrlon=-66.38,urcrnrlat=52.88, projection='merc')
+        
+#ref http://boundingbox.klokantech.com/ westlimit=-130.1; southlimit=23.13; eastlimit=-66.38; northlimit=52.88
+#lat_1=37.94,lat_2=45,lon_0=-95
 
 # load the shapefile, use the name 'states'
 map.readshapefile('ne_50m_admin_1_states_provinces', name='states', drawbounds=True)
